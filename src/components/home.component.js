@@ -30,7 +30,7 @@ export default class Home extends Component {
                 <hr />
                 <ul>
                     <li><a href="/" onClick={this.callLoginApi}> Get User JSON </a></li>
-                    <li><a href={"https://jwt.io/#debugger-io?token=" + this.props.accessToken} target="_blank">Validate Token on jwt.io</a></li>
+                    <li><a href={"https://jwt.io/#debugger-io?token=" + this.props.accessToken} target="_blank" rel="noopener noreferrer">Validate Token on jwt.io</a></li>
                 </ul>
                 <hr />
                 <p className="label-refresh">Please <i><a href="/login">Refresh</a></i> to end your session</p>
