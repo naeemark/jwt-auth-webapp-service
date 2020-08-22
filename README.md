@@ -9,7 +9,7 @@ Demonstration of REST Api consumption.
  - **[Backend API Code Repo](https://github.com/naeemark/jwt-auth-service.git)**
  - **[Swagger API Docs - Deployed on Kubesail](https://jwt-auth-service.naeemark.usw1.kubesail.org/swagger-ui.html)** 
  - **[API Integrations FrontEnd Demo - Heroku Deployment](https://jwt-auth-webapp-service.herokuapp.com/)** 
----
+
 
 ### What is this repository for? ###
 
@@ -20,4 +20,13 @@ Demonstration of REST Api consumption.
 * The live environment is established on [Heroku](https://heroku.com/) as per requirement
 * Version 1.0.0
 
----
+## Distribution ##
+- [Live Demo](https://jwt-auth-webapp-service.herokuapp.com/)
+
+### Development ###
+- [Code-Repository](https://github.com/naeemark/jwt-auth-webapp-service)
+- [Code-Pipeline](https://github.com/naeemark/jwt-auth-webapp-service/actions)
+
+## Contribution guidelines ##
+
+- Forks are always appreciated
