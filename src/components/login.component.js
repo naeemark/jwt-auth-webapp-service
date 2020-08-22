@@ -8,7 +8,7 @@ export default class Login extends Component {
         super(props)
         console.log(props);
         this.state = {
-            userNameOrEmail: 'jimmy1970', password: 'Abc@12345',
+            userNameOrEmail: '', password: '',
             name: '',
             accessToken: ''
         }
