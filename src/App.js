@@ -15,12 +15,17 @@ function App() {
           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <a title="Code Repository" className="nav-link" style={{ color: "steelblue" }} target="_blank" rel="noopener noreferrer"
+                <a title="My Profile" className="nav-link" target="_blank" rel="noopener noreferrer"
+                  href={"https://www.linkedin.com/in/naeemark"}><img src="/linkedin.svg" className="li-icon" alt="My Profile" /> </a>
+              </li>
+              <li className="nav-item nav-link"> | </li>
+              <li className="nav-item">
+                <a title="Code Repository" className="nav-link" target="_blank" rel="noopener noreferrer"
                   href={"https://www.github.com/naeemark/jwt-auth-service"}><img src="/github.svg" className="nav-icon" alt="GitHub Repo" /> </a>
               </li>
               <li className="nav-item nav-link"> | </li>
               <li className="nav-item">
-                <a title="Swagger Docs" className="nav-link" style={{ color: "steelblue" }} target="_blank" rel="noopener noreferrer"
+                <a title="Swagger Docs" className="nav-link" target="_blank" rel="noopener noreferrer"
                   href={"https://jwt-auth-service.naeemark.usw1.kubesail.org/swagger-ui.html"}><img src="/swagger.svg" className="nav-icon" alt="Swagger Docs" /> </a>
               </li>
               <li className="nav-item nav-link"> | </li>
