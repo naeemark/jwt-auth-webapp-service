@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
-const sayHello = () => {
-    console.log("Login Button Clicked");
+const callLoginApi = (event) => {
+    console.log("Login Button Clicked", event);
 }
 
 export default class Login extends Component {
@@ -9,16 +9,15 @@ export default class Login extends Component {
         return (
             <form>
                 <h3>Login</h3>
-                <hr />
 
                 <div className="form-group">
-                    <label>Email address</label>
-                    <input type="email" className="form-control" placeholder="Enter email" />
+                    <label>Username or Email</label>
+                    <input type="text" className="form-control" placeholder="Enter Username or Email" defaultValue="jimmy1970" required />
                 </div>
 
                 <div className="form-group">
                     <label>Password</label>
-                    <input type="password" className="form-control" placeholder="Enter password" />
+                    <input type="password" className="form-control" placeholder="Enter password" defaultValue="Abc@12345" required />
                 </div>
                 {/* 
                 <div className="form-group">
@@ -30,7 +29,7 @@ export default class Login extends Component {
 
                 <hr />
 
-                <button type="submit" className="btn btn-primary btn-block" onClick={sayHello}>Submit</button>
+                <button type="submit" className="btn btn-primary btn-block" onClick={callLoginApi}>Submit</button>
                 {/* <p className="forgot-password text-right">
                     Forgot <a href="#">password?</a>
                 </p> */}
