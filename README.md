@@ -27,6 +27,11 @@ Demonstration of REST Api consumption.
 - [Code-Repository](https://github.com/naeemark/jwt-auth-webapp-service)
 - [Code-Pipeline](https://github.com/naeemark/jwt-auth-webapp-service/actions)
 
+
+#### Reference ####
+- [react-login-signup-ui-template](https://github.com/SinghDigamber/react-login-signup-ui-template)
+- https://reactjs.org/docs
+
 ## Contribution guidelines ##
 
 - Forks are always appreciated
