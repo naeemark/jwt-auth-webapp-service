@@ -5,13 +5,14 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import Login from "./components/login.component";
 import SignUp from "./components/signup.component";
+import Home from "./components/home.component";
 
 function App() {
   return (<Router>
     <div className="App">
       <nav className="navbar navbar-expand-lg navbar-light fixed-top">
         <div className="container">
-          <Link className="navbar-brand" to={"/login"}><b>Jwt Auth WebApp</b></Link>
+          <Link className="navbar-brand" to={"/login"}><b>JWT Auth WebApp</b></Link>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
@@ -46,6 +47,7 @@ function App() {
             <Route exact path='/' component={Login} />
             <Route path="/login" component={Login} />
             <Route path="/sign-up" component={SignUp} />
+            <Route path="/home" component={Home} />
           </Switch>
         </div>
       </div>

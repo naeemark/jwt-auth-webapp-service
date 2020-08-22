@@ -28,3 +28,13 @@
 .li-icon {
   width: 32px;
 }
+
+.name {
+  color: red;
+  margin-top: 16px;
+}
+
+.label-refresh {
+  color: steelblue;
+  text-align: center;
+}
