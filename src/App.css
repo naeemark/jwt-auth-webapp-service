@@ -32,6 +32,7 @@
 .name {
   color: red;
   margin-top: 16px;
+   text-decoration: underline;
 }
 
 .label-refresh {
