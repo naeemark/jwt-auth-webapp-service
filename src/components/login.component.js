@@ -1,16 +1,19 @@
 import React, { Component } from "react";
 import axios from 'axios';
+import Home from "./home.component";
 
 export default class Login extends Component {
 
     constructor(props) {
         super(props)
+        console.log(props);
         this.state = {
-            userNameOrEmail: 'abc', password: 'Abc@12345',
-            label: ''
+            userNameOrEmail: 'jimmy1970', password: 'Abc@12345',
+            name: ''
         }
         this.callLoginApi = this.callLoginApi.bind(this)
         this.handleInputChange = this.handleInputChange.bind(this);
+
     }
 
     handleInputChange(event) {
@@ -19,21 +22,27 @@ export default class Login extends Component {
     }
 
     callLoginApi(event) {
-        console.log("Login Button Clicked");
-        axios.get('https://jwt-auth-service.naeemark.usw1.kubesail.org/api/health')
+        axios.post('https://jwt-auth-service.naeemark.usw1.kubesail.org/api/login', this.state)
             .then(response => {
-                this.setState({ label: response.data.serviceName })
+                this.setState({ name: response.data.user.name })
                 console.log(response.data);
-            })
+            }).catch((error) => {
+                if (error.response) {
+                    console.log(error.response.data);
+                    alert(error.response.data.message)
+                }
+            });
         event.preventDefault();
     }
 
     render() {
+        if (this.state.name)
+            return <Home name={this.state.name} />;
         return (
             <div>
                 <form onSubmit={this.callLoginApi}>
                     <h3>Login</h3>
-                    <h4>{this.state.label}</h4>
+                    <h4>{this.state.name}</h4>
 
                     <div className="form-group">
                         <label>Username or Email</label>

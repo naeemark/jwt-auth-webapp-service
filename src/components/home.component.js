@@ -1,15 +1,14 @@
 import React, { Component } from "react";
 
 export default class Home extends Component {
+
     render() {
         return (
-            <form>
-                <h3>Home</h3>
-
-                <div className="form-group">
-                    <label>Welcome</label>
-                </div>
-            </form>
+            <div>
+                <h3>Welcome <p className="name">{this.props.name}</p></h3>
+                <hr></hr>
+                <p className="label-refresh">Please <i>Refresh</i> to end your session</p>
+            </div>
         );
     }
 }
