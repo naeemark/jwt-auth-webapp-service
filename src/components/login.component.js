@@ -26,6 +26,7 @@ export default class Login extends Component {
             .then(response => {
                 this.setState({ name: response.data.user.name })
                 console.log(response.data);
+                console.log(response.status);
             }).catch((error) => {
                 if (error.response) {
                     console.log(error.response.data);
@@ -36,32 +37,37 @@ export default class Login extends Component {
     }
 
     render() {
-        if (this.state.name)
+        if (this.state.name) {
             return <Home name={this.state.name} />;
-        return (
-            <div>
-                <form onSubmit={this.callLoginApi}>
-                    <h3>Login</h3>
-                    <h4>{this.state.name}</h4>
+        }
+        else {
+            return (
+                <div>
+                    <form onSubmit={this.callLoginApi}>
+                        <h3>Login</h3>
 
-                    <div className="form-group">
-                        <label>Username or Email</label>
-                        <input name="userNameOrEmail" type="text" className="form-control" placeholder="Enter Username or Email" required
-                            value={this.state.userNameOrEmail}
-                            onChange={this.handleInputChange}
-                        />
-                    </div>
+                        <div className="form-group">
+                            <label>Username or Email</label>
+                            <input name="userNameOrEmail" type="text" className="form-control" placeholder="Enter Username or Email" required
+                                value={this.state.userNameOrEmail}
+                                onChange={this.handleInputChange}
+                            />
+                        </div>
 
-                    <div className="form-group">
-                        <label>Password</label>
-                        <input name="password" type="password" className="form-control" placeholder="Enter password" required
-                            onChange={this.handleInputChange} value={this.state.password}
-                        />
-                    </div>
-                    <hr />
-                    <button type="submit" className="btn btn-primary btn-block" >Submit</button>
-                </form>
-            </div >
-        );
+                        <div className="form-group">
+                            <label>Password</label>
+                            <input name="password" type="password" className="form-control" placeholder="Enter password" required
+                                onChange={this.handleInputChange} value={this.state.password}
+                            />
+                        </div>
+                        <hr />
+                        <button type="submit" className="btn btn-primary btn-block" >Submit</button>
+                        <p className="forgot-password text-right">
+                            Not registered <a href="/sign-up">sign up?</a>
+                        </p>
+                    </form>
+                </div >
+            );
+        }
     }
 }
