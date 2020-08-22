@@ -32,10 +32,12 @@
 .name {
   color: red;
   margin-top: 16px;
-   text-decoration: underline;
+  text-decoration: underline;
 }
 
 .label-refresh {
   color: steelblue;
   text-align: center;
+  font-size: 0.8em;
+  padding-top: 10px;
 }

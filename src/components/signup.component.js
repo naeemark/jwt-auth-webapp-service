@@ -11,7 +11,8 @@ export default class SignUp extends Component {
             userName: '',
             email: '',
             password: '',
-            status: ''
+            status: '',
+            accessToken: ''
         }
         this.callSignupApi = this.callSignupApi.bind(this)
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -27,7 +28,7 @@ export default class SignUp extends Component {
     callSignupApi(event) {
         axios.post('https://jwt-auth-service.naeemark.usw1.kubesail.org/api/signup', this.state)
             .then(response => {
-                this.setState({ status: response.status, name: response.data.user.name })
+                this.setState({ status: response.status, name: response.data.user.name, accessToken: response.data.accessToken })
                 console.log(response.data);
             }).catch((error) => {
                 if (error.response) {
@@ -40,7 +41,7 @@ export default class SignUp extends Component {
 
     render() {
         if (this.state.status === 200) {
-            return <Home name={this.state.name} />;
+            return <Home name={this.state.name} accessToken={this.state.accessToken} />;
         }
         else {
             return (

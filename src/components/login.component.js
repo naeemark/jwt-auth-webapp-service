@@ -9,7 +9,8 @@ export default class Login extends Component {
         console.log(props);
         this.state = {
             userNameOrEmail: 'jimmy1970', password: 'Abc@12345',
-            name: ''
+            name: '',
+            accessToken: ''
         }
         this.callLoginApi = this.callLoginApi.bind(this)
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -24,7 +25,7 @@ export default class Login extends Component {
     callLoginApi(event) {
         axios.post('https://jwt-auth-service.naeemark.usw1.kubesail.org/api/login', this.state)
             .then(response => {
-                this.setState({ name: response.data.user.name })
+                this.setState({ name: response.data.user.name, accessToken: response.data.accessToken })
                 console.log(response.data);
                 console.log(response.status);
             }).catch((error) => {
@@ -38,7 +39,7 @@ export default class Login extends Component {
 
     render() {
         if (this.state.name) {
-            return <Home name={this.state.name} />;
+            return <Home name={this.state.name} accessToken={this.state.accessToken} />;
         }
         else {
             return (
